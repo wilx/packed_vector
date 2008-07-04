@@ -438,7 +438,7 @@ public:
   }
 
   void
-  reserve (size_type n) const
+  reserve (size_type n)
   {
     storage.reserve (needed_storage_size (n));
   }
@@ -477,7 +477,7 @@ public:
     if (i < elems)
       return reference (this, i);
     else
-      throw std::out_of_range ();
+      throw std::out_of_range ("bad index");
   }
 
   const_reference
@@ -486,7 +486,7 @@ public:
     if (i < elems)
       return const_reference (this, i);
     else
-      throw std::out_of_range ();
+      throw std::out_of_range ("bad index");
   }
 
   reference
@@ -680,10 +680,10 @@ public:
     return reverse_iterator (begin ());
   }
 
-  reverse_iterator
+  const_reverse_iterator
   rend () const
   {
-    return reverse_iterator (begin ());
+    return const_reverse_iterator (begin ());
   }
 
 protected:
