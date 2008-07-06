@@ -418,6 +418,13 @@ test_25 ()
 }
 
 
+void
+test_26 ()
+{
+  vec_type v (10, 1);
+  assert (v.data ());
+}
+
 
 int
 main ()
@@ -447,4 +454,5 @@ main ()
   test_23 ();
   test_24 ();
   test_25 ();
+  test_26 ();
 }

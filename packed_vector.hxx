@@ -690,6 +690,12 @@ public:
     return const_reverse_iterator (begin ());
   }
 
+  char const *
+  data () const
+  {
+    return reinterpret_cast<char const *> (&storage.front ());
+  }
+
 protected:
   friend class detail::packed_vector_value_ref<
     PACKED_VECTOR_TMPL_BR>;
