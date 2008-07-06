@@ -100,6 +100,8 @@ private:
   packed_vector_value_const_ref &
   operator = (packed_vector_value_const_ref const &) const;
 
+  void operator & () const;
+
   packed_vector_value_const_ref (packed_vector_type const * v, size_t i)
     : vec (v)
     , index (i)
@@ -150,6 +152,8 @@ private:
     : vec (v)
     , index (i)
   { }
+
+  void operator & () const;
 
   friend class packed_vector<PACKED_VECTOR_TMPL_BR>;
   friend class packed_vector_iter<PACKED_VECTOR_TMPL_BR>;
