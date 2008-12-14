@@ -117,6 +117,8 @@ test_10 ()
   vec_type u (10, 2);
   vec_type v (u.begin (), u.end ());
 
+  assert (std::distance (u.begin (), u.end ()) == 10);
+
   for (size_t i = 0; i < v.size (); ++i)
     {
       vec_type::value_type val = v[i];
